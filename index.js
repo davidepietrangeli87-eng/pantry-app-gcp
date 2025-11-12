@@ -40,8 +40,8 @@ app.post('/', (req, res) => {
   });
 
   const options = {
-    hostname: 'generativelanguage.googleapis.com',
-    path: `/v1/models/${GEMINI_MODEL}:generateContent?key=${GEMINI_API_KEY}`,
+    hostname: 'europe-west1-aiplatform.googleapis.com',
+    path: `/v1/projects/gen-lang-client-0490769596/locations/europe-west1/publishers/google/models/${GEMINI_MODEL}:streamGenerateContent`,
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
