@@ -29,3 +29,7 @@ images:
 substitutions:
   _SERVICE_NAME: pantry-tracker-service # Il nome del tuo servizio Cloud Run
   _REGION: europe-west1                 # La tua regione GCP
+# ... (il resto del tuo cloudbuild.yaml) ...
+
+options:
+  logging: CLOUD_LOGGING_ONLY
