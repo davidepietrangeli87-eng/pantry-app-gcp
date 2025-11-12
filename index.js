@@ -8,7 +8,7 @@ app.use(express.json({ limit: '10mb' }));
 // La tua chiave API di Gemini.
 // **IMPORTANTE**: Sostituisci con la tua vera chiave API!
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
-const GEMINI_MODEL = 'gemini-pro-vision';
+const GEMINI_MODEL = 'gemini-1.5-flash-latest';
 
 // Abilita CORS per permettere alla tua app di chiamare questa funzione
 app.use((req, res, next) => {
