@@ -41,7 +41,7 @@ app.post('/', (req, res) => {
 
   const options = {
     hostname: 'generativelanguage.googleapis.com',
-    path: `/v1beta/models/${GEMINI_MODEL}:generateContent?key=${GEMINI_API_KEY}`,
+    path: `/v1/models/${GEMINI_MODEL}:generateContent?key=${GEMINI_API_KEY}`,
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -72,4 +72,3 @@ const port = process.env.PORT || 8080;
 app.listen(port, () => {
   console.log(`Pantry Tracker App proxy listening on port ${port}`);
 });
-
