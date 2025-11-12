@@ -9,19 +9,18 @@ steps:
 
 # Esegui il deployment dell'immagine container su Cloud Run
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: gcloud
   args:
-  - gcloud
   - run
   - deploy
-  - pantry-tracker-service # Questo sarà il nome del tuo servizio Cloud Run
+  - pantry-tracker-service # Nome del servizio Cloud Run
   - --image
   - gcr.io/$PROJECT_ID/pantry-tracker-service:$COMMIT_SHA
   - --region
-  - europe-west1 # Questa sarà la regione dove verrà deployato il tuo servizio
+  - europe-west1 # Regione di deployment
   - --platform=managed
-  # - --allow-unauthenticated # Decommenta questa riga se l'applicazione deve essere accessibile pubblicamente
-  env:
-  - PROJECT_ID=$PROJECT_ID
+  # - --allow-unauthenticated # DECOMMENTARE SE L'APP FLUTTER NON USA AUTENTICAZIONE
+
 
 images:
 - gcr.io/$PROJECT_ID/pantry-tracker-service:$COMMIT_SHA
